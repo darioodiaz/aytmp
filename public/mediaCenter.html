@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Center Player</title>
+  <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <div class="container col-lg-4">
+    <div class="panel panel-primary">
+
+      <div class="panel-heading">
+        <h3 class="text-center"><i class="glyphicon glyphicon-headphones"></i> Playlist</h3>
+      </div>
+
+      <div class="panel-body">
+        <div id="currentPlaylist">
+          
+        </div>
+      </div>
+
+      <div class="panel-footer">
+        <div class="disabled">
+          <button disabled class="btn btn-default pull-left" id="prev"><i class="glyphicon glyphicon-backward"></i> Prev</button>
+          <button disabled class="btn btn-default pull-right" id="next">Next <i class="glyphicon glyphicon-forward"></i></button>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>    
+  </div>
+
+  <div class="col-lg-8">
+    <div class="panel panel-success">
+
+      <div class="panel-heading">
+        <label class="label label-info">Volume: <span id="serverVolume">-</span></label><input style="width: 20%;" type="range" min="0" max="100" id="volume">
+        <button id="mute-unmute" class="btn btn-lg btn-default"><i id="mute-unmute-icon" class="glyphicon glyphicon-volume-off"></i></button>
+        <h3 class="text-center"><i class="glyphicon glyphicon-play-circle"> </i> Now playing: <span id="currentVideoTitle">-</span></h3>
+      </div>
+
+      <div id="playerContainer" style="height: 300px;" class="panel-body">
+        <div id="player"></div>
+      </div>
+
+    </div>
+  </div>  
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/bootstrap.js"></script>
+  <script src="scripts/socket.io.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/videoFn.js"></script>
+  <script src="scripts/socketFn.js"></script>
+  <script src="scripts/domListeners.js"></script>
+  <script src="scripts/index/app.js"></script>
+</body>
+</html>

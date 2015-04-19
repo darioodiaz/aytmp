@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Player</title>
+  <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <div class="container col-lg-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="text-center"><i class="glyphicon glyphicon-headphones"></i> Playlist</h3>
+      </div>
+      <div class="panel-body">
+        <div id="currentPlaylist">
+          
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="disabled">
+          <button disabled class="btn btn-default pull-left" id="prev"><i class="glyphicon glyphicon-backward"></i> Prev</button>
+          <button disabled class="btn btn-default pull-right" id="next">Next <i class="glyphicon glyphicon-forward"></i></button>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>    
+  </div>
+
+  <div class="col-lg-8">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <label class="label label-info">Volume: <span id="serverVolume">-</span></label><input style="width: 20%;" type="range" min="0" max="100" id="volume">
+        <button id="mute-unmute" class="btn btn-lg btn-default"><i id="mute-unmute-icon" class="glyphicon glyphicon-volume-off"></i></button>
+        <h3 class="text-center"><i class="glyphicon glyphicon-play-circle"> </i> Now playing: <span id="currentVideoTitle">-</span></h3>
+        <h4 class="text-center"><label class="label label-warning"><span id="currentTime">00:00:00</span> - <span id="totalTime">00:00:00</span></label></h4>
+      </div>
+
+      <div class="panel-body">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="text-center"><i class="glyphicon glyphicon-music"></i> Search</h3>
+          </div>
+          
+          <div class="panel-body">
+            <form class="form-inline" id="frm_search">
+              <div class="form-group">
+                <input type="text" id="query" required placeholder="Ingresa un titulo...">&nbsp;&nbsp;
+              </div>
+              <button class="btn btn-xs btn-primary" disabled id="btn_search" type="submit"><i class="glyphicon glyphicon-search"></i> Search</button>
+            </form>
+            
+            <div style="margin-top: 10px;" id="yt_results"></div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>  
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/bootstrap.js"></script>
+  <script src="scripts/socket.io.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/domListeners.js"></script>
+  <script src="scripts/socketFn.js"></script>
+  <script src="scripts/videoFn.js"></script>
+  <script src="scripts/youtubeFn.js"></script>
+  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+</body>
+</html>
