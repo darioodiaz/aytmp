@@ -19,7 +19,7 @@ function centralRoute (req, res, next) {
 };
 function challengeRoute(req, res, next) {
 	if(req.body.key == KEY_OF_THE_DAY) {
-		res.cookies("cpass", "ok");		
+		res.cookie("cpass", "ok");
 		res.redirect("/app");
 	} else {
 		res.redirect("/forbbiden");
